@@ -37,6 +37,28 @@ header a {
     text-decoration: none;
 }
 
+#register {
+    margin-left: 28vw;
+}
+
+.form-a input {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+button {
+    margin: 10px;
+}
+
 .portrait {
     width: 250px;
+}
+
+.redClass {
+    background-color: red !important;
+}
+
+td {
+    text-align: center;
 }

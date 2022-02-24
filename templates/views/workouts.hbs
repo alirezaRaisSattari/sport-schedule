@@ -1,51 +1,47 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
     <link rel="stylesheet" href="/css/styles.css">
-
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8"
         src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+    <script src="/js/workouts.js"></script>
 </head>
 
 {{>header}}
 
 <body>
-    <div class="main-content" id="main">
-        <p>Use this site to list your workout!</p>
-        <button onclick="create()">add new user</button>
-
+    <button onclick="create()">create workout</button>
+    <button onclick="doPrint()">print List</button>
+    <div id="table-container">
         <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
-                    <th>name</th>
-                    <th>height</th>
+                    <th>sportName</th>
+                    <th>set</th>
                     <th>weight</th>
-                    <th>bellyAround</th>
+                    <th>number</th>
                     <th>function</th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
-                    <th>name</th>
-                    <th>height</th>
+                    <th>sportName</th>
+                    <th>set</th>
                     <th>weight</th>
-                    <th>bellyAround</th>
+                    <th>number</th>
                     <th>function</th>
                 </tr>
             </tfoot>
         </table>
+    </div>
+    </div>
 
-        {{>footer}}
+    {{>footer}}
 </body>
-
-<head>
-    <script src="/js/app.js"></script>
-</head>
 
 </html>

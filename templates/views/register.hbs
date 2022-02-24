@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/register.js"></script>
+</head>
+
+{{>header}}
+
+<body>
+    <div class="main-content">
+        <p>Use this site to list your workout!</p>
+        <form onsubmit="callAPI(event)">
+            <div class="form-a">
+                <input type="text" id="name" placeholder="name">
+                <input type="text" id="email" placeholder="email address">
+                <input type="text" id="password" placeholder="password">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="weatherTXT"></p>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

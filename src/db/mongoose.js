@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://alireza:hora1393@cluster0.hjage.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/task-manager-api', {
     useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
+    useCreateIndex: true
 })

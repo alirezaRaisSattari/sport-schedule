@@ -1,11 +1,2 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-node_modules
-config
-=======
 node_modules/
->>>>>>> parent of 559b24c (as)
-=======
-node_modules
-config
->>>>>>> 983a19fde14344b3b227f20ea47fbd6f729a0699
+.env

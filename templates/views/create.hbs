@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+{{>header}}
+
+<body>
+    <div class="main-content" id="step1">
+        <p>Use this site to list your workout!</p>
+        <form onsubmit="callAPI(event)">
+            <div class="form-a">
+                <input type="text" id="name" placeholder="نام">
+                <input type="text" id="bellyAround" placeholder="دور شکم">
+                <input type="text" id="weight" placeholder="وزن">
+                <input type="text" id="height" placeholder="قد">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="weatherTXT"></p>
+    </div>
+
+    <script src="/js/create.js"></script>
+</body>
+
+</html>
