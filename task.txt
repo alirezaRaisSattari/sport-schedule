@@ -5,6 +5,7 @@ repository of work out
 edit
 print in tow page
 copy to other contact
-datepicker and validation
+handle errors
+date picker and front validation
 logout
 connect to other user

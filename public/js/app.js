@@ -81,7 +81,8 @@ $(document).ready(function () {
                     "sPrevious": "قبلی",
                     "sNext": "بعدی",
                 },
-                "emptyTable": "این لیست خالی است",
+                "emptyTable": " این لیست خالی است",
+                "sInfoEmpty": "",
             },
         }
     )

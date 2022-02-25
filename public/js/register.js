@@ -26,6 +26,7 @@ const callAPI = (e) => {
             localStorage.setItem("token", resi.token);
             window.location.href = '/';
         } catch (error) {
+            
 
         }
     }

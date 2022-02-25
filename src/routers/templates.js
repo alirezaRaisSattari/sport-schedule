@@ -1,5 +1,6 @@
 const express = require('express')
 const router = new express.Router()
+const loginGuard = require('../middleware/loginGuard')
 
 const name = 'alireza rais sattari'
 const icon = '/img/icon.png'
@@ -12,7 +13,9 @@ router.get('', (req, res) => {
     })
 })
 
+
 router.get('/about', (req, res) => {
+    // loginGuard(req, res, next)
     res.render('about', {
         title: 'درباره من',
         name,
