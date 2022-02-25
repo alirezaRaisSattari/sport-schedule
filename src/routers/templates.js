@@ -6,7 +6,7 @@ const icon = '/img/icon.png'
 
 router.get('', (req, res) => {
     res.render('index', {
-        title: 'Your Lists',
+        title: 'مخاطبین',
         name,
         icon
     })
@@ -14,7 +14,7 @@ router.get('', (req, res) => {
 
 router.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me',
+        title: 'درباره من',
         name,
         icon
     })
@@ -23,7 +23,7 @@ router.get('/about', (req, res) => {
 router.get('/help', (req, res) => {
     res.render('help', {
         helpText: 'This is some helpful text.',
-        title: 'Help',
+        title: 'راهنما',
         name,
         icon
     })
@@ -31,7 +31,7 @@ router.get('/help', (req, res) => {
 
 router.get('/register', (req, res) => {
     res.render('register', {
-        title: 'sing up',
+        title: 'ثبت نام',
         name,
         icon
     })
@@ -44,7 +44,7 @@ router.get('/workouts/*/*/print', (req, res) => {
 
 router.get('/workouts/*', (req, res) => {
     res.render('workouts', {
-        title: 'workouts',
+        title: 'ورزش ها',
         name,
         icon
     })
@@ -52,7 +52,7 @@ router.get('/workouts/*', (req, res) => {
 
 router.get('/lists/*', (req, res) => {
     res.render('lists', {
-        title: 'lists',
+        title: 'لیست ها',
         name,
         icon
     })
@@ -60,7 +60,7 @@ router.get('/lists/*', (req, res) => {
 
 router.get('/login', (req, res) => {
     res.render('login', {
-        title: 'login',
+        title: 'ورود',
         name,
         icon
     })

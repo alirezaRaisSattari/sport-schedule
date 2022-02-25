@@ -21,6 +21,9 @@ const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {
         var t = $('#example').DataTable()
+        t
+            .order([0, 'asc'])
+            .draw();
         t.row.add([
             '',
             '<input type="text" id="date">',
@@ -54,8 +57,8 @@ const create = () => {
             }
             a()
         });
+        isCreate = false
     }, 50);
-    isCreate = false
 }
 
 $(document).ready(function () {

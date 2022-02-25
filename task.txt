@@ -1,1 +1,10 @@
+delete /////
 expired token
+responsive 
+repository of work out
+edit
+print in tow page
+copy to other contact
+datepicker and validation
+logout
+connect to other user

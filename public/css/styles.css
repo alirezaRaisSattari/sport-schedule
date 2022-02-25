@@ -68,3 +68,11 @@ label {
     float: left;
 
 }
+@font-face {
+    font-family: myFirstFont;
+    src: url('/font/IRANSansWeb(FaNum).woff');
+}
+
+* {
+    font-family: myFirstFont;
+}
