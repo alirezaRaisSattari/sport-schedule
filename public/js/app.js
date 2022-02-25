@@ -65,17 +65,18 @@ $(document).ready(function () {
                 "targets": 4,
                 "data": "4",
                 "render": function (data) {
-                    return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer" id="see">see lists</a>`;
+                    return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer" id="see">مشاهده لیست</a>`;
                 },
             },
-            { "width": "50%", "targets": 0 },
-            { "width": "15%", "targets": 4 }
+            { "width": "40%", "targets": 0 },
+            { "width": "20%", "targets": 4 }
             ],
             "oLanguage": {
                 "sSearch": "جست و جو:",
                 "sInfoFiltered": "ورودی",
                 "sInfo": "نمایش _START_ تا _END_ از _TOTAL_ ورودی",
                 "sLengthMenu": "نمایش _MENU_ ورودی",
+                "sEmptyTable": "لیست خالی است",
                 "oPaginate": {
                     "sPrevious": "قبلی",
                     "sNext": "بعدی",

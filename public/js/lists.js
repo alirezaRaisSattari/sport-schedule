@@ -66,7 +66,7 @@ $(document).ready(function () {
                 "data": "2",
                 "render": (data) => {
                     workoutId = data.id
-                    return `<a onclick="toWorkout('${data.id}')" style="cursor: pointer;" id="see"> see workouts</a>`
+                    return `<a onclick="toWorkout('${data.id}')" style="cursor: pointer;" id="see">نمایش تمرین ها</a>`
                 }
             }
             ],
@@ -74,6 +74,7 @@ $(document).ready(function () {
                 "sSearch": "جست و جو:",
                 "sInfoFiltered": "ورودی",
                 "sInfo": "نمایش _START_ تا _END_ از _TOTAL_ ورودی",
+                "sEmptyTable": "لیست خالی است",
                 "sLengthMenu": "نمایش _MENU_ ورودی",
                 "oPaginate": {
                     "sPrevious": "قبلی",

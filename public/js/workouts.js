@@ -69,6 +69,7 @@ $(document).ready(function () {
             "sSearch": "جست و جو:",
             "sInfoFiltered": "ورودی",
             "sInfo": "نمایش _START_ تا _END_ از _TOTAL_ ورودی",
+            "sEmptyTable": "لیست خالی است",
             "sLengthMenu": "نمایش _MENU_ ورودی",
             "oPaginate": {
                 "sPrevious": "قبلی",
