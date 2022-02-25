@@ -1,4 +1,3 @@
-const token = localStorage.getItem("token")
 const param = window.location.pathname.replace("/workouts/", "").split("/")
 const workoutId = param[0]
 const id = param[1]

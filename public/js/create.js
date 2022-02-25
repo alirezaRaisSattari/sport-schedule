@@ -1,4 +1,3 @@
-const token = localStorage.getItem("token")
 
 const callAPI = (e) => {
     e.preventDefault();

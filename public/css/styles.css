@@ -38,7 +38,7 @@ header a {
 }
 
 #register {
-    margin-left: 28vw;
+    margin-left: 15vw;
 }
 
 .form-a input {
@@ -68,6 +68,7 @@ label {
     float: left;
 
 }
+
 @font-face {
     font-family: myFirstFont;
     src: url('/font/IRANSansWeb(FaNum).woff');
@@ -75,4 +76,22 @@ label {
 
 * {
     font-family: myFirstFont;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
 }

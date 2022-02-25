@@ -1,10 +1,5 @@
-const token = localStorage.getItem("token")
 const id = window.location.pathname.replace("/lists/", "")
 console.log(id);
-
-if (!token) {
-    window.location.href = '/login'
-}
 
 let workoutId = ""
 let total = []
@@ -26,14 +21,14 @@ const create = () => {
             .draw();
         t.row.add([
             '',
-            '<input type="text" id="date">',
+            '<input type="text" style="border: solid 1px #bbb; border-radius: 5px; padding: 3px;" placeholder="تاریخ" id="date">',
             { index: 0 },
         ]).draw(false);
     })
     setTimeout(() => {
         let element = document.getElementById("see")
 
-        element.innerHTML = 'done';
+        element.innerHTML = 'تایید';
         element.style.color = 'green';
         element.addEventListener('click', () => {
             const date = document.getElementById('date').value

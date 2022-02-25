@@ -1,8 +1,3 @@
-const token = localStorage.getItem("token")
-
-if (!token) {
-    window.location.href = '/login'
-}
 let isCreate = true
 
 const toURL = (URL) => {
@@ -15,17 +10,17 @@ const create = () => {
     $(document).ready(function () {
         var t = $('#example').DataTable()
         t.row.add([
-            '<input type="text" id="name">',
-            '<input type="text" id="height">',
-            '<input type="text" id="weight">',
-            '<input type="text" id="bellyAround">',
-            ' <button>finn</button>',
+            '<input type="text" style="" id="name">',
+            '<input type="text" style="width: 44px;" id="height">',
+            '<input type="text" style="width: 44px;" id="weight">',
+            '<input type="text" style="width: 44px;" id="bellyAround">',
+            ' ',
         ]).draw(false);
     })
     setTimeout(() => {
         let element = document.getElementById("see")
 
-        element.innerHTML = 'done';
+        element.innerHTML = 'تایید';
         element.style.color = 'green';
         element.addEventListener('click', () => {
             const name = document.getElementById('name').value

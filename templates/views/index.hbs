@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 
 <html>
-<script>
-    const token = localStorage.getItem("token")
 
-    if (!token) {
-        window.location.href = '/login'
-    }
-</script>
+{{>loginGuard}}
 
 <head>
     <link rel="stylesheet" href="/css/styles.css">
