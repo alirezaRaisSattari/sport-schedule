@@ -66,8 +66,22 @@ $(document).ready(function () {
                 "data": "4",
                 "render": function (data) {
                     return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer" id="see">see lists</a>`;
-                }
-            }]
+                },
+            },
+            { "width": "50%", "targets": 0 },
+            { "width": "15%", "targets": 4 }
+            ],
+            "oLanguage": {
+                "sSearch": "جست و جو:",
+                "sInfoFiltered": "ورودی",
+                "sInfo": "نمایش _START_ تا _END_ از _TOTAL_ ورودی",
+                "sLengthMenu": "نمایش _MENU_ ورودی",
+                "oPaginate": {
+                    "sPrevious": "قبلی",
+                    "sNext": "بعدی",
+                },
+                "emptyTable": "این لیست خالی است",
+            },
         }
     )
     const a = async function postData() {
@@ -96,29 +110,3 @@ $(document).ready(function () {
     }
     a()
 });
-
-// function closePrint() {
-//     document.body.removeChild(this.__container__);
-// }
-
-// function setPrint() {
-//     this.contentWindow.__container__ = this;
-//     this.contentWindow.onbeforeunload = closePrint;
-//     this.contentWindow.onafterprint = closePrint;
-//     this.contentWindow.focus(); // Required for IE
-//     this.contentWindow.print();
-// }
-
-// function printPage(sURL) {
-//     var oHideFrame = document.createElement("iframe");
-//     oHideFrame.onload = setPrint;
-//     oHideFrame.style.position = "fixed";
-//     oHideFrame.style.right = "0";
-//     oHideFrame.style.bottom = "0";
-//     oHideFrame.style.width = "0";
-//     oHideFrame.style.height = "0";
-//     oHideFrame.style.border = "0";
-//     oHideFrame.src = sURL;
-//     document.body.appendChild(oHideFrame);
-// }
-// printPage('http://localhost:3000/')

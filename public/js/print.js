@@ -14,7 +14,11 @@ $(document).ready(function () {
         "bFilter": true,
         "bInfo": false,
         "bAutoWidth": false,
-        "searching": false
+        "searching": false,
+        "ordering": false,
+        "columnDefs": [
+            { "width": "90%", "targets": 0 }
+        ],
     })
     const a = async function postData() {
         try {

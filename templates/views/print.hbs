@@ -10,6 +10,7 @@
     <script type="text/javascript" charset="utf8"
         src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
     <script src="/js/print.js"></script>
+
     <style type="text/css" media="print">
         @page {
             size: landscape;
@@ -17,6 +18,15 @@
 
         td {
             text-align: center;
+        }
+
+        @font-face {
+            font-family: myFirstFont;
+            src: url('/font/IRANSansWeb(FaNum).woff');
+        }
+
+        * {
+            font-family: myFirstFont;
         }
     </style>
 </head>
@@ -28,15 +38,15 @@
                 <th>sportName</th>
                 <th>set</th>
                 <th>weight</th>
-                <th>number</th>
+                <th>num</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <th>sportName</th>
                 <th>set</th>
-                <th>weight</th>
-                <th>number</th>
+                <th>wei</th>
+                <th>num</th>
             </tr>
         </tfoot>
     </table>

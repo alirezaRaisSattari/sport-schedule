@@ -68,7 +68,19 @@ $(document).ready(function () {
                     workoutId = data.id
                     return `<a onclick="toWorkout('${data.id}')" style="cursor: pointer;" id="see"> see workouts</a>`
                 }
-            }],
+            }
+            ],
+            "oLanguage": {
+                "sSearch": "جست و جو:",
+                "sInfoFiltered": "ورودی",
+                "sInfo": "نمایش _START_ تا _END_ از _TOTAL_ ورودی",
+                "sLengthMenu": "نمایش _MENU_ ورودی",
+                "oPaginate": {
+                    "sPrevious": "قبلی",
+                    "sNext": "بعدی",
+                },
+                "emptyTable": "این لیست خالی است",
+            },
         }
     )
     const a = async function postData() {

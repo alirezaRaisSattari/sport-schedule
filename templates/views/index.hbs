@@ -4,39 +4,50 @@
 
 <head>
     <link rel="stylesheet" href="/css/styles.css">
-
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8"
         src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+    <link href="//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)" rel="stylesheet"
+        type="text/css" />
 </head>
+
+<style>
+    @font-face {
+        font-family: myFirstFont;
+        src: url('/font/IRANSansWeb(FaNum).woff');
+    }
+
+    * {
+        font-family: myFirstFont;
+    }
+</style>
 
 {{>header}}
 
 <body>
     <div class="main-content" id="main">
-        <p>Use this site to list your workout!</p>
-        <button onclick="create()">add new user</button>
+        <button onclick="create()">اضافه کردن مخاطب</button>
 
         <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
-                    <th>name</th>
-                    <th>height</th>
-                    <th>weight</th>
-                    <th>bellyAround</th>
-                    <th>function</th>
+                    <th>نام</th>
+                    <th>قد</th>
+                    <th>وزن</th>
+                    <th>دور شکم</th>
+                    <th> </th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
-                    <th>name</th>
-                    <th>height</th>
-                    <th>weight</th>
-                    <th>bellyAround</th>
-                    <th>function</th>
+                    <th>نام</th>
+                    <th>قد</th>
+                    <th>وزن</th>
+                    <th>دور شکم</th>
+                    <th> </th>
                 </tr>
             </tfoot>
         </table>

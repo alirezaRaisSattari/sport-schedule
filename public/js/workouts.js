@@ -61,7 +61,22 @@ const create = () => {
 }
 
 $(document).ready(function () {
-    var t = $('#example').DataTable()
+    var t = $('#example').DataTable({
+        "columnDefs": [
+            { "width": "90%", "targets": 0 }
+        ],
+        "oLanguage": {
+            "sSearch": "جست و جو:",
+            "sInfoFiltered": "ورودی",
+            "sInfo": "نمایش _START_ تا _END_ از _TOTAL_ ورودی",
+            "sLengthMenu": "نمایش _MENU_ ورودی",
+            "oPaginate": {
+                "sPrevious": "قبلی",
+                "sNext": "بعدی",
+            },
+            "emptyTable": "این لیست خالی است",
+        },
+    })
     const a = async function postData() {
         try {
             const res = await fetch(`/tasks/${workoutId}/${id}`, {

@@ -15,6 +15,17 @@
         src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
     <script src="/js/lists.js"></script>
 </head>
+<style>
+    @font-face {
+        font-family: myFirstFont;
+        src: url('/font/IRANSansWeb(FaNum).woff');
+    }
+
+    * {
+        font-family: myFirstFont;
+    }
+</style>
+
 
 {{>header}}
 
@@ -26,9 +37,9 @@
         <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
-                    <th>row</th>
-                    <th>date</th>
-                    <th>function</th>
+                    <th>ردیف</th>
+                    <th>تاریخ</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                 </tr>
             </thead>
             <tfoot>

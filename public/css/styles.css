@@ -62,3 +62,9 @@ button {
 td {
     text-align: center;
 }
+
+label {
+    direction: rtl;
+    float: left;
+
+}
