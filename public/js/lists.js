@@ -12,6 +12,29 @@ const toWorkout = (workoutID) => {
     window.location.href = `/workouts/${workoutID}/${id}`
 }
 
+const deleteItem = (listId) => {
+    console.log(id);
+    const a = async function postData() {
+        try {
+            const res = await fetch(`/tasks/${id}/${listId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': token,
+                    'Content-Type': 'application/json'
+                },
+            })
+            // window.location.href = '/'
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    a()
+}
+
+const editItem = (id) => {
+
+}
+
 const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {
@@ -23,12 +46,15 @@ const create = () => {
             '',
             '<input type="text" class="create-input" placeholder="تاریخ" id="date">',
             { index: 0 },
+            { index: 0 },
         ]).draw(false);
     })
     setTimeout(() => {
         let element = document.getElementById("see")
+        let deleteElement = document.getElementById("deleteElement")
 
         element.innerHTML = 'تایید';
+        deleteElement.style.display = 'none';
         element.style.color = 'green';
         element.addEventListener('click', () => {
             const date = document.getElementById('date').value
@@ -67,7 +93,16 @@ $(document).ready(function () {
                     workoutId = data.id
                     return `<a onclick="toWorkout('${data.id}')" style="cursor: pointer; color: #999;" id="see">نمایش تمرین ها</a>`
                 }
-            }
+            },
+            {
+                "targets": 3,
+                "render": function (data) {
+                    return "<div style='display: flex; justify-content: center;' id='deleteElement' >" +
+                        `<i class="fa fa-trash" onclick="deleteItem('${data.id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
+                        `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px; cursor:pointer;'></i>` +
+                        `</div>`;
+                },
+            },
             ],
             "oLanguage": {
                 "sSearch": "جست و جو:",
@@ -99,6 +134,7 @@ $(document).ready(function () {
                 t.row.add([
                     i + 1,
                     response.plan[i].date,
+                    { length: response.plan[i].list, id: response.plan[i]._id },
                     { length: response.plan[i].list, id: response.plan[i]._id },
                 ]).draw(false);
             }

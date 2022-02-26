@@ -29,8 +29,8 @@ const callAPI = (e) => {
                 window.location.href = '/';
             }
         } catch (error) {
-
             weatherTXT.innerHTML = error
+            weatherTXT.style.color = 'red'
         }
     }
     a()

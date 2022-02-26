@@ -38,40 +38,43 @@ const create = () => {
             '<input type="text" style="width: 44px;" class="create-input" placeholder="وزن" id="weight">',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="دور شکم" id="bellyAround">',
             ' ',
-        ]).draw(false);
+            ' ',
+        ]).draw(true);
     })
     setTimeout(() => {
         let element = document.getElementById("see")
 
-        element.innerHTML = 'تایید';
-        element.style.color = 'green';
-        element.addEventListener('click', () => {
-            const name = document.getElementById('name').value
-            const bellyAround = document.getElementById('bellyAround').value
-            const weight = document.getElementById('weight').value
-            const height = document.getElementById('height').value
-            const a = async function postData() {
-                try {
-                    const res = await fetch('/tasks', {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            name,
-                            bellyAround,
-                            weight,
-                            height,
-                        }),
-                        headers: {
-                            'Authorization': token,
-                            'Content-Type': 'application/json'
-                        },
-                    })
-                    window.location.href = '/'
-                } catch (error) {
-                    console.log(error);
+        if (element) {
+            element.innerHTML = 'تایید';
+            element.style.color = 'green';
+            element.addEventListener('click', () => {
+                const name = document.getElementById('name').value
+                const bellyAround = document.getElementById('bellyAround').value
+                const weight = document.getElementById('weight').value
+                const height = document.getElementById('height').value
+                const a = async function postData() {
+                    try {
+                        const res = await fetch('/tasks', {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                name,
+                                bellyAround,
+                                weight,
+                                height,
+                            }),
+                            headers: {
+                                'Authorization': token,
+                                'Content-Type': 'application/json'
+                            },
+                        })
+                        window.location.href = '/'
+                    } catch (error) {
+                        console.log(error);
+                    }
                 }
-            }
-            a()
-        });
+                a()
+            });
+        }
     }, 50);
     isCreate = false
 }
@@ -86,18 +89,17 @@ $(document).ready(function () {
                     return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer; color: #999;" id="see">مشاهده لیست</a>`
                 },
             },
-            { "width": "40%", "targets": 0 },
-            { "width": "20%", "targets": 4 },
             {
                 "targets": 5,
                 "render": function (data) {
-                    return "<div style='display: flex;'>" +
+                    return "<div style='display: flex; justify-content: center;'>" +
                         `<i class="fa fa-trash" onclick="deleteItem('${data.id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
                         `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px; cursor:pointer;'></i>` +
                         `</div>`;
-
                 },
-            }
+            },
+            { "width": "40%", "targets": 0 },
+            { "width": "20%", "targets": 4 },
             ],
             "oLanguage": {
                 "sSearch": "جست و جو:",

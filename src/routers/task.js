@@ -126,4 +126,42 @@ router.delete('/tasks/:id', auth, async (req, res) => {
     }
 })
 
+router.delete('/tasks/:id/:listId', auth, async (req, res) => {
+    try {
+        const task = await Task.findOne({ _id: req.params.id, owner: req.user._id })
+        const listId = req.params.listId
+
+        if (!task) {
+            res.status(404).send()
+        }
+        const index = task.plan.findIndex((e) => listId == e._id)
+        task.plan.splice(index, 1)
+
+        await task.save()
+        res.send(task)
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
+router.delete('/tasks/:id/:listId/:workoutId', auth, async (req, res) => {
+    try {
+        const task = await Task.findOne({ _id: req.params.id, owner: req.user._id })
+        const listId = req.params.listId
+        const workoutId = req.params.workoutId
+
+        if (!task) {
+            res.status(404).send()
+        }
+        const index = task.plan.findIndex((e) => listId == e._id)
+        const index2 = task.plan[index].list.findIndex((e) => workoutId == e._id)
+        
+        task.plan[index].list.splice(index2, 1)
+        await task.save()
+        res.send(task)
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
 module.exports = router 

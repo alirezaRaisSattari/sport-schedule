@@ -96,7 +96,10 @@ $(document).ready(function () {
                     workoutList[i].set,
                     workoutList[i].weight,
                     workoutList[i].number,
-                    ":)",
+                    "<div style='display: flex; justify-content: center;' id='deleteElement' >" +
+                    `<i class="fa fa-trash" onclick="deleteItem('${workoutList[i]._id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
+                    `<i class="fas fa-edit" onclick="editItem('${workoutList[i]._id}')" style='color:#a7a700; margin-left:10px; cursor:pointer;'></i>` +
+                    `</div>`
                 ]).draw(false);
             }
         } catch (error) {
