@@ -5,6 +5,29 @@ const toURL = (URL) => {
     window.location.href = URL
 }
 
+const deleteItem = (id) => {
+    console.log(id);
+    const a = async function postData() {
+        try {
+            const res = await fetch(`/tasks/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': token,
+                    'Content-Type': 'application/json'
+                },
+            })
+            window.location.href = '/'
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    a()
+}
+
+const editItem = (id) => {
+
+}
+
 const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {
@@ -60,11 +83,21 @@ $(document).ready(function () {
                 "targets": 4,
                 "data": "4",
                 "render": function (data) {
-                    return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer; color: #999;" id="see">مشاهده لیست</a>`;
+                    return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer; color: #999;" id="see">مشاهده لیست</a>`
                 },
             },
             { "width": "40%", "targets": 0 },
-            { "width": "20%", "targets": 4 }
+            { "width": "20%", "targets": 4 },
+            {
+                "targets": 5,
+                "render": function (data) {
+                    return "<div style='display: flex;'>" +
+                        `<i class="fa fa-trash" onclick="deleteItem('${data.id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
+                        `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px; cursor:pointer;'></i>` +
+                        `</div>`;
+
+                },
+            }
             ],
             "oLanguage": {
                 "sSearch": "جست و جو:",
@@ -98,6 +131,7 @@ $(document).ready(function () {
                     response[i].height,
                     response[i].weight,
                     response[i].bellyAround,
+                    { id: response[i]._id, name: response[i].name },
                     { id: response[i]._id, name: response[i].name },
                 ]).draw(false);
             }
