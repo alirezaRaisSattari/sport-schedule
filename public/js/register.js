@@ -21,13 +21,16 @@ const callAPI = (e) => {
                     password
                 })
             })
+            const respon = await res
             const resi = await res.json()
             console.log(resi.user);
-            localStorage.setItem("token", resi.token);
-            window.location.href = '/';
+            if (respon.status == 201) {
+                localStorage.setItem("token", resi.token);
+                window.location.href = '/';
+            }
         } catch (error) {
-            
 
+            weatherTXT.innerHTML = error
         }
     }
     a()
