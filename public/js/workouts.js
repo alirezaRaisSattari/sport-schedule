@@ -12,6 +12,25 @@ const doPrint = () => {
     window.location.href = `${window.location.pathname}/print`
 }
 
+const deleteItem = (listId) => {
+    console.log(id);
+    const a = async function postData() {
+        try {
+            const res = await fetch(`/tasks/${id}/${listId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': token,
+                    'Content-Type': 'application/json'
+                },
+            })
+            // window.location.href = '/'
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    a()
+}
+
 const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {

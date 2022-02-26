@@ -23,7 +23,7 @@ const deleteItem = (listId) => {
                     'Content-Type': 'application/json'
                 },
             })
-            // window.location.href = '/'
+            window.location.href = window.location.reload
         } catch (error) {
             console.log(error);
         }
