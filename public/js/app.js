@@ -10,10 +10,10 @@ const create = () => {
     $(document).ready(function () {
         var t = $('#example').DataTable()
         t.row.add([
-            '<input type="text" style="" id="name">',
-            '<input type="text" style="width: 44px;" id="height">',
-            '<input type="text" style="width: 44px;" id="weight">',
-            '<input type="text" style="width: 44px;" id="bellyAround">',
+            '<input type="text" style="" class="create-input" placeholder="ورزش مورد نظر را وارد کنید" id="name">',
+            '<input type="text" style="width: 44px;" class="create-input" placeholder="قد" id="height">',
+            '<input type="text" style="width: 44px;" class="create-input" placeholder="وزن" id="weight">',
+            '<input type="text" style="width: 44px;" class="create-input" placeholder="دور شکم" id="bellyAround">',
             ' ',
         ]).draw(false);
     })
@@ -60,7 +60,7 @@ $(document).ready(function () {
                 "targets": 4,
                 "data": "4",
                 "render": function (data) {
-                    return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer" id="see">مشاهده لیست</a>`;
+                    return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer; color: #999;" id="see">مشاهده لیست</a>`;
                 },
             },
             { "width": "40%", "targets": 0 },

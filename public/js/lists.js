@@ -21,7 +21,7 @@ const create = () => {
             .draw();
         t.row.add([
             '',
-            '<input type="text" style="border: solid 1px #bbb; border-radius: 5px; padding: 3px;" placeholder="تاریخ" id="date">',
+            '<input type="text" class="create-input" placeholder="تاریخ" id="date">',
             { index: 0 },
         ]).draw(false);
     })
@@ -59,12 +59,13 @@ const create = () => {
 $(document).ready(function () {
     var t = $('#example').DataTable(
         {
+            "searching": false,
             "columnDefs": [{
                 "targets": 2,
                 "data": "2",
                 "render": (data) => {
                     workoutId = data.id
-                    return `<a onclick="toWorkout('${data.id}')" style="cursor: pointer;" id="see">نمایش تمرین ها</a>`
+                    return `<a onclick="toWorkout('${data.id}')" style="cursor: pointer; color: #999;" id="see">نمایش تمرین ها</a>`
                 }
             }
             ],

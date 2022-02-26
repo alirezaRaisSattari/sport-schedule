@@ -17,10 +17,10 @@ const create = () => {
     $(document).ready(function () {
         var t = $('#example').DataTable()
         t.row.add([
-            '<input type="text" style="width:100%; border: solid 1px #bbb; border-radius: 5px; padding: 3px;" placeholder="ورزش مورد نظر را وارد کنید" id="sportName">',
-            '<input type="text" style="width: 44px; border: solid 1px #bbb; border-radius: 5px; padding: 3px;" placeholder="ست" id="set">',
-            '<input type="text" style="width: 44px; border: solid 1px #bbb; border-radius: 5px; padding: 3px;" placeholder="وزن" id="weight">',
-            '<input type="text" style="width: 44px; border: solid 1px #bbb; border-radius: 5px; padding: 3px;" placeholder="تعداد" id="number">',
+            '<input type="text" style="width:100%;" class="create-input" placeholder="ورزش مورد نظر را وارد کنید" id="sportName">',
+            '<input type="text" style="width: 44px;" class="create-input" placeholder="ست" id="set">',
+            '<input type="text" style="width: 44px;" class="create-input" placeholder="وزن" id="weight">',
+            '<input type="text" style="width: 44px;" class="create-input" placeholder="تعداد" id="number">',
             '<p id="see" style="cursor: pointer; padding: 0; margin:0;">تایید</p>',
         ]).draw(false);
     })

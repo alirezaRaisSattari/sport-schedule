@@ -17,26 +17,16 @@
         src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
     <script src="/js/lists.js"></script>
 </head>
-<style>
-    @font-face {
-        font-family: myFirstFont;
-        src: url('/font/IRANSansWeb(FaNum).woff');
-    }
-
-    * {
-        font-family: myFirstFont;
-    }
-</style>
-
 
 {{>header}}
 
 <body>
     <div class="main-content" id="step1">
-        <button onclick="create()">ساخت لیست جدید</button>
+        <button onclick="create()" style="width:100%">ساخت لیست جدید</button>
         {{!-- <button onclick="delete()">delete list</button> --}}
-
-        <table id="example" class="display" style="width:100%">
+        {{!--
+        <hr> --}}
+        <table id="example" class="display" style="width:100%;">
             <thead>
                 <tr>
                     <th>ردیف</th>
@@ -49,29 +39,6 @@
                     <th>ردیف</th>
                     <th>تاریخ</th>
                     <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-
-    <div class="main-content" style="display: none;" id="step2">
-        <button onclick="createStep2()">create</button>
-
-        <table id="exampl" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>ro</th>
-                    <th>dat</th>
-                    <th>list lengt</th>
-                    <th>list lengt</th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <th>row</th>
-                    <th>date</th>
-                    <th>list length</th>
-                    <th>list length</th>
                 </tr>
             </tfoot>
         </table>
