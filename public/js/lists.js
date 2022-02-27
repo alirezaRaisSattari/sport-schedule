@@ -39,9 +39,7 @@ const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {
         var t = $('#example').DataTable()
-        t
-            .order([0, 'asc'])
-            .draw();
+        t.order([0, 'asc']).draw();
         t.row.add([
             '',
             '<input type="text" class="create-input" placeholder="تاریخ" id="date">',
@@ -99,7 +97,7 @@ $(document).ready(function () {
                 "render": function (data) {
                     return "<div style='display: flex; justify-content: center;' id='deleteElement' >" +
                         `<i class="fa fa-trash" onclick="deleteItem('${data.id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
-                        `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px; cursor:pointer;'></i>` +
+                        `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px;  margin-right:10px; cursor:pointer;'></i>` +
                         `</div>`;
                 },
             },

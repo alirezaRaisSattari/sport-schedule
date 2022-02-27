@@ -1,7 +1,7 @@
 const param = window.location.pathname.replace("/workouts/", "").split("/")
-const workoutId = param[0]
+const listId = param[0]
 const id = param[1]
-console.log(id, workoutId);
+console.log(id, listId);
 
 if (!token) {
     window.location.href = '/login'
@@ -12,18 +12,18 @@ const doPrint = () => {
     window.location.href = `${window.location.pathname}/print`
 }
 
-const deleteItem = (listId) => {
+const deleteItem = (workoutId) => {
     console.log(id);
     const a = async function postData() {
         try {
-            const res = await fetch(`/tasks/${id}/${listId}`, {
+            const res = await fetch(`/tasks/${id}/${listId}/${workoutId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': token,
                     'Content-Type': 'application/json'
                 },
             })
-            // window.location.href = '/'
+            window.location.reload()
         } catch (error) {
             console.log(error);
         }
@@ -31,10 +31,16 @@ const deleteItem = (listId) => {
     a()
 }
 
+const editItem = (id) => {
+
+}
+
+
 const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {
         var t = $('#example').DataTable()
+        t.order([0, 'asc']).draw();
         t.row.add([
             '<input type="text" style="width:100%;" class="create-input" placeholder="ورزش مورد نظر را وارد کنید" id="sportName">',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="ست" id="set">',
@@ -54,7 +60,7 @@ const create = () => {
             if (!sportName) return;
             const a = async function postData() {
                 try {
-                    const res = await fetch(`/tasks/updateWorkout/${id}/${workoutId}`, {
+                    const res = await fetch(`/tasks/updateWorkout/${id}/${listId}`, {
                         method: 'POST',
                         body: JSON.stringify({
                             sportName,
@@ -98,7 +104,7 @@ $(document).ready(function () {
     })
     const a = async function postData() {
         try {
-            const res = await fetch(`/tasks/${workoutId}/${id}`, {
+            const res = await fetch(`/tasks/${listId}/${id}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': token,
@@ -117,7 +123,7 @@ $(document).ready(function () {
                     workoutList[i].number,
                     "<div style='display: flex; justify-content: center;' id='deleteElement' >" +
                     `<i class="fa fa-trash" onclick="deleteItem('${workoutList[i]._id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
-                    `<i class="fas fa-edit" onclick="editItem('${workoutList[i]._id}')" style='color:#a7a700; margin-left:10px; cursor:pointer;'></i>` +
+                    `<i class="fas fa-edit" onclick="editItem('${workoutList[i]._id}')" style='color:#a7a700; margin-left:10px; margin-right:10px; cursor:pointer;'></i>` +
                     `</div>`
                 ]).draw(false);
             }

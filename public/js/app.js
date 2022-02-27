@@ -32,6 +32,7 @@ const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {
         var t = $('#example').DataTable()
+        t.order([0, 'asc']).draw();
         t.row.add([
             '<input type="text" style="" class="create-input" placeholder="ورزش مورد نظر را وارد کنید" id="name">',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="قد" id="height">',
@@ -94,7 +95,7 @@ $(document).ready(function () {
                 "render": function (data) {
                     return "<div style='display: flex; justify-content: center;'>" +
                         `<i class="fa fa-trash" onclick="deleteItem('${data.id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
-                        `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px; cursor:pointer;'></i>` +
+                        `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px; margin-right:10px; cursor:pointer;'></i>` +
                         `</div>`;
                 },
             },

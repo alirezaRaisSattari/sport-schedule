@@ -1,11 +1,10 @@
-delete /////
-expired token
-responsive 
+responsive and back btn////
 repository of work out
-edit
+expired token
 print in tow page
 copy to other contact
-handle errors
+handle api errors
+edit
 date picker and front validation
 logout
 connect to other user
