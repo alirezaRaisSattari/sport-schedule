@@ -11,7 +11,45 @@ let isCreate = true
 const doPrint = () => {
     window.location.href = `${window.location.pathname}/print`
 }
+const doPrint2 = () => {
 
+    var favDialog = document.getElementById('favDialog');
+    var mainSelect = document.getElementById('mainSelect');
+    mainSelect.innerHTML = "<option value='' disabled selected>تاریخ لیست را مشخص کنید</option>"
+
+
+    if (typeof favDialog.showModal === "function") {
+        favDialog.showModal();
+    } else {
+        alert("The <dialog> API is not supported by this browser");
+    }
+    favDialog.addEventListener('close', function onClose() {
+        console.log(favDialog.returnValue, mainSelect.value);
+        if (favDialog.returnValue == 'default' && mainSelect.value)
+            window.location.href = `${window.location.pathname}/${mainSelect.value}/print`
+    });
+
+    const a = async function postData() {
+        try {
+            const res = await fetch(`/tasks/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': token,
+                    'Content-Type': 'application/json'
+                },
+            })
+            const response = await res.json()
+            for (let i = 0; i < response.plan.length; i++) {
+                mainSelect.innerHTML += `<option value='${response.plan[i]._id}'>${response.plan[i].date}</option>`
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    a()
+    //////////////////////////////////////
+
+}
 const deleteItem = (workoutId) => {
     console.log(id);
     const a = async function postData() {

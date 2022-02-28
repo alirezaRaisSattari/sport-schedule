@@ -34,7 +34,7 @@ const create = () => {
         var t = $('#example').DataTable()
         t.order([0, 'asc']).draw();
         t.row.add([
-            '<input type="text" style="" class="create-input" placeholder="ورزش مورد نظر را وارد کنید" id="name">',
+            '<input type="text" style="" class="create-input" placeholder="نام مخاطب را وارد کنید" id="name">',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="قد" id="height">',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="وزن" id="weight">',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="دور شکم" id="bellyAround">',
@@ -44,6 +44,7 @@ const create = () => {
     })
     setTimeout(() => {
         let element = document.getElementById("see")
+        document.getElementById("editDelete").style.display = 'none'
 
         if (element) {
             element.innerHTML = 'تایید';
@@ -87,32 +88,32 @@ $(document).ready(function () {
                 "targets": 4,
                 "data": "4",
                 "render": function (data) {
-                    return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer; color: #999;" id="see">مشاهده لیست</a>`
+                    return `<a onclick="toURL('/lists/${data.id}')" style="cursor:pointer; color: #999;" id="see">مشاهده لیست ها</a>`
                 },
             },
             {
                 "targets": 5,
                 "render": function (data) {
-                    return "<div style='display: flex; justify-content: center;'>" +
+                    return "<div style='display: flex; justify-content: center;' id='editDelete'>" +
                         `<i class="fa fa-trash" onclick="deleteItem('${data.id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
                         `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px; margin-right:10px; cursor:pointer;'></i>` +
                         `</div>`;
                 },
             },
             { "width": "40%", "targets": 0 },
-            { "width": "20%", "targets": 4 },
+            { "width": "23%", "targets": 4 },
             ],
             "oLanguage": {
                 "sSearch": "جست و جو:",
                 "sInfoFiltered": "ورودی",
                 "sInfo": "نمایش _START_ تا _END_ از _TOTAL_ ورودی",
                 "sLengthMenu": "نمایش _MENU_ ورودی",
-                "sEmptyTable": "لیست خالی است",
+                "sEmptyTable": "مخاطب جدید اضافه کنید",
                 "oPaginate": {
                     "sPrevious": "قبلی",
                     "sNext": "بعدی",
                 },
-                "emptyTable": " این لیست خالی است",
+                "emptyTable": "مخاطب جدید اضافه کنید",
                 "sInfoEmpty": "",
             },
         }

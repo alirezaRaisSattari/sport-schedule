@@ -34,6 +34,7 @@
 <body>
     <button onclick="create()">اضافه کردن تمرین</button>
     <button onclick="doPrint()">چاپ لیست</button>
+    <button onclick="doPrint2()" id="updateDetails">چاپ چندتایی</button>
     <div id="table-container">
         <table id="example" class="display" style="width:100%">
             <thead>
@@ -58,6 +59,18 @@
     </div>
     </div>
 
+    <dialog id="favDialog">
+        <form method="dialog">
+            <p><label>Favorite animal:
+                    <select value="1111" id="mainSelect">
+                    </select>
+                </label></p>
+            <menu>
+                <button value="cancel">Cancel</button>
+                <button id="confirmBtn" value="default">Confirm</button>
+            </menu>
+        </form>
+    </dialog>
     {{>footer}}
 </body>
 

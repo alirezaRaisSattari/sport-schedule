@@ -45,6 +45,11 @@ router.get('/workouts/*/*/print', (req, res) => {
     })
 })
 
+router.get('/workouts/*/*/print2', (req, res) => {
+    res.render('workouts', {
+    })
+})
+
 router.get('/workouts/*', (req, res) => {
     res.render('workouts', {
         title: 'ورزش ها',
