@@ -4,6 +4,8 @@ const auth = require('../middleware/auth')
 const router = new express.Router()
 
 router.post('/users/register', async (req, res) => {
+    const exist = User.findOne({ email: req.body.email })
+    if (exist) res.status(400).send({ "msg": "duplicated" })
     const user = new User(req.body)
 
     try {
@@ -11,7 +13,7 @@ router.post('/users/register', async (req, res) => {
         const token = await user.generateAuthToken()
         res.status(201).send({ user, token })
     } catch (e) {
-        res.status(400).send(e)
+        res.status(400).send({ "msg": `${e.message ?? e}`})
     }
 })
 
