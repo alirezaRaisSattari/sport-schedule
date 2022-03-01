@@ -1,9 +1,7 @@
 repository of work out
-expired token
-print in tow page
+print in tow page (in new like jobinja)
 copy to other contact
 handle api errors
 edit
-date picker and front validation
-logout
+diagrams
 connect to other user
