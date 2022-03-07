@@ -29,3 +29,4 @@ app.use(templateRouter)
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
 })
+global.globalString = "This can be accessed anywhere!";

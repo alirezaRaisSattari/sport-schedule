@@ -3,6 +3,7 @@ const User = require('../models/user')
 const auth = require('../middleware/auth')
 const router = new express.Router()
 
+
 router.post('/users/register', async (req, res) => {
     const exist = User.findOne({ email: req.body.email })
     if (exist) res.status(400).send({ "msg": "duplicated" })
