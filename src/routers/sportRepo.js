@@ -5,8 +5,8 @@ const router = new express.Router()
 router.get('/repo/get', async (req, res) => {
     try {
         const repo = await Repo.find({})
-        console.log(repo);  
-        res.status(201).send({ repo })
+        console.log(repo);
+        res.status(201).send([...repo])
     } catch (e) {
         res.status(400).send()
     }
@@ -20,11 +20,14 @@ router.post('/repo/post', async (req, res) => {
             return
         }
 
-        const repo = new Repo(req.body)
+        const repo = new Repo({
+            name: req.body.name,
+        })
 
         await repo.save()
         res.status(201).send({ repo })
     } catch (e) {
+        console.log(e);
         res.status(400).send()
     }
 })

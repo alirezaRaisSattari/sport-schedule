@@ -8,7 +8,7 @@ const Repo = mongoose.model('Repo', {
     },
 })
 
-//warning
+// warning
 // Repo.deleteMany({}, function (err) {
 //     console.log('collection removed')
 // });
