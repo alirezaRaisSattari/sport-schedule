@@ -1,5 +1,28 @@
 let isCreate = true
 
+const deleteItem = (listId) => {
+    const a = async function postData() {
+        try {
+            console.log(listId);
+            const res = await fetch(`/repo/delete/:${listId}`, {
+                method: 'DELETE',
+                headers: {
+                    // 'Authorization': token,
+                    'Content-Type': 'application/json'
+                },
+            })
+            window.location.reload()
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    a()
+}
+
+const editItem = (id) => {
+
+}
+
 const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {
@@ -48,9 +71,10 @@ $(document).ready(function () {
             "columnDefs": [{
                 "targets": 1,
                 "render": function (data) {
+                    console.log(data);
                     return "<div style='display: flex; justify-content: center;' id='deleteElement' >" +
-                        `<i class="fa fa-trash" onclick="deleteItem('${data.id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
-                        `<i class="fas fa-edit" onclick="editItem('${data.id}')" style='color:#a7a700; margin-left:10px;  margin-right:10px; cursor:pointer;'></i>` +
+                        `<i class="fa fa-trash" onclick="deleteItem('${data._id}')" style='color:red; cursor:pointer;' aria-hidden="true"></i>` +
+                        `<i class="fas fa-edit" onclick="editItem('${data._id}')" style='color:#a7a700; margin-left:10px;  margin-right:10px; cursor:pointer;'></i>` +
                         `</div>`;
                 },
             },

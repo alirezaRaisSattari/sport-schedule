@@ -45,20 +45,18 @@ router.post('/repo/post', async (req, res) => {
     }
 })
 
-router.put('/repo/edit/:id', async (req, res) => {
-    try {
-        const exist = Repo.findOne({ email: req.body.email })
-        if (exist) res.status(400).send({ "msg": "duplicated" })
-        const repo = new Repo(req.body)
-
-        await repo.save()
-        res.status(201).send({ repo })
-    } catch (e) {
-        res.status(400).send()
-    }
-}
-)
 router.delete('/repo/delete/:id', async (req, res) => {
+    const _id = req.params.id.replace(":", "")
+    try {
+        const exist = await Repo.findByIdAndDelete({ _id })
+        if (!exist) res.status(404).send({ "msg": "dont exist" })
+        res.status(201).send({ exist })
+    } catch (e) {
+        res.status(400).send(e)
+    }
+})
+
+router.put('/repo/edit/:id', async (req, res) => {
     try {
         const exist = Repo.findOne({ email: req.body.email })
         if (exist) res.status(400).send({ "msg": "duplicated" })
