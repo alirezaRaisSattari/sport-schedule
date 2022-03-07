@@ -9,8 +9,8 @@ const Repo = mongoose.model('Repo', {
 })
 
 // warning
-// Repo.deleteMany({}, function (err) {
-//     console.log('collection removed')
-// });
+Repo.deleteMany({}, function (err) {
+    console.log('collection removed')
+});
 
 module.exports = Repo
