@@ -17,6 +17,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.1.10",
     "mongoose": "^5.3.16",
+    "node-polyglot": "^2.4.2",
     "validator": "^10.11.0"
   },
   "devDependencies": {
