@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+{{>loginGuard}}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+    <script src="/js/printTowPage.js"></script>
+
+    <style type="text/css" media="print">
+        @page {
+            size: landscape;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        @font-face {
+            font-family: myFirstFont;
+            src: url('/font/IRANSansWeb(FaNum).woff');
+        }
+
+        * {
+            font-family: myFirstFont;
+        }
+
+        .dataTables_wrapper {
+            width: 50% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <table id="example" style=" margin-right:auto; float: right;">
+            <thead>
+                <tr>
+                    <th>اسم ورزش</th>
+                    <th>ست</th>
+                    <th>وزن</th>
+                    <th>تعداد</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>اسم ورزش</th>
+                    <th>ست</th>
+                    <th>وزن</th>
+                    <th>تعداد</th>
+                </tr>
+            </tfoot>
+        </table>
+        <table id="example2" style="width:100%; margin-right:auto; float: right;">
+            <thead>
+                <tr>
+                    <th>اسم ورزش</th>
+                    <th>ست</th>
+                    <th>وزن</th>
+                    <th>تعداد</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>اسم ورزش</th>
+                    <th>ست</th>
+                    <th>وزن</th>
+                    <th>تعداد</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>

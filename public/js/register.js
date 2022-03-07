@@ -1,5 +1,3 @@
-console.log('Client side javascript file is loaded!')
-
 
 const callAPI = (e) => {
     e.preventDefault();

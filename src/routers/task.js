@@ -50,7 +50,7 @@ router.get('/tasks/:workoutId/:id', auth, async (req, res) => {
         const task = await Task.findOne({ _id, owner: req.user._id })
 
         if (!task) {
-            return res.status(404).send()
+            return res.status(404).send("fuck")
         }
         const plan = task.plan.find((e) => workoutId == e._id)
         res.send(plan)

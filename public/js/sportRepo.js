@@ -1,33 +1,4 @@
-// const id = window.location.pathname.replace("/lists/", "")
-// console.log(id);
-
-// let workoutId = ""
-// let total = []
 let isCreate = true
-
-
-// const deleteItem = (listId) => {
-//     console.log(id);
-//     const a = async function postData() {
-//         try {
-//             const res = await fetch(`/tasks/${id}/${listId}`, {
-//                 method: 'DELETE',
-//                 headers: {
-//                     'Authorization': token,
-//                     'Content-Type': 'application/json'
-//                 },
-//             })
-//             window.location.reload()
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     }
-//     a()
-// }
-
-// const editItem = (id) => {
-
-// }
 
 const create = () => {
     if (!isCreate) { return }
@@ -108,7 +79,6 @@ $(document).ready(function () {
                 // },
             })
             const response = await res.json()
-            console.log(response);
             total = response;
             for (let i = 0; i < response.length; i++) {
                 t.row.add([

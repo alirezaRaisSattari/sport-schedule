@@ -1,5 +1,4 @@
 const id = window.location.pathname.replace("/lists/", "")
-console.log(id);
 
 let workoutId = ""
 let total = []
@@ -7,13 +6,11 @@ let isCreate = true
 
 
 const toWorkout = (workoutID) => {
-    console.log(workoutID);
     if (workoutID == 'undefined') return;
     window.location.href = `/workouts/${workoutID}/${id}`
 }
 
 const deleteItem = (listId) => {
-    console.log(id);
     const a = async function postData() {
         try {
             const res = await fetch(`/tasks/${id}/${listId}`, {
@@ -126,7 +123,6 @@ $(document).ready(function () {
                 },
             })
             const response = await res.json()
-            console.log(response.plan[0].list);
             total = response;
             for (let i = 0; i < response.plan.length; i++) {
                 t.row.add([

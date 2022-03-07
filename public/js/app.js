@@ -6,7 +6,6 @@ const toURL = (URL) => {
 }
 
 const deleteItem = (id) => {
-    console.log(id);
     const a = async function postData() {
         try {
             const res = await fetch(`/tasks/${id}`, {
@@ -128,7 +127,6 @@ $(document).ready(function () {
                 },
             })
             const response = await res.json()
-            console.log(response);
             for (let i = 0; i < response.length; i++) {
                 t.row.add([
                     response[i].name,

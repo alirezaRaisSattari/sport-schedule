@@ -1,7 +1,6 @@
 const param = window.location.pathname.replace("/workouts/", "").split("/")
 const listId = param[0]
 const id = param[1]
-console.log(id, listId);
 
 if (!token) {
     window.location.href = '/login'
@@ -24,9 +23,8 @@ const doPrint2 = () => {
         alert("The <dialog> API is not supported by this browser");
     }
     favDialog.addEventListener('close', function onClose() {
-        console.log(favDialog.returnValue, mainSelect.value);
         if (favDialog.returnValue == 'default' && mainSelect.value)
-            window.location.href = `${window.location.pathname}/${mainSelect.value}/print`
+            window.location.href = `${window.location.pathname}/${mainSelect.value}/print2`
     });
 
     const a = async function postData() {
@@ -50,7 +48,6 @@ const doPrint2 = () => {
 
 }
 const deleteItem = (workoutId) => {
-    console.log(id);
     const a = async function postData() {
         try {
             const res = await fetch(`/tasks/${id}/${listId}/${workoutId}`, {
@@ -172,9 +169,7 @@ $(document).ready(function () {
                 },
             })
             const response = await res.json()
-            console.log(response.list);
             const workoutList = response.list;
-            console.log(workoutList[0].sportName);
             for (let i = 0; i < response.list.length; i++) {
                 t.row.add([
                     workoutList[i].sportName,

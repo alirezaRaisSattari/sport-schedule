@@ -46,7 +46,7 @@ router.get('/workouts/*/*/print', (req, res) => {
 })
 
 router.get('/workouts/*/*/print2', (req, res) => {
-    res.render('workouts', {
+    res.render('printTowPage', {
     })
 })
 
