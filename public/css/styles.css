@@ -40,7 +40,14 @@ header a {
 }
 
 #register {
-    margin-left: 15vw;
+    margin-left: 11vw;
+}
+
+#logout {
+    margin-left: 11vw;
+    color: red;
+    display: none;
+    cursor: pointer;
 }
 
 .form-a input {
