@@ -5,7 +5,7 @@ const router = new express.Router()
 router.get('/repo/get', async (req, res) => {
     try {
         const repo = await Repo.find({})
-        console.log(repo);
+        console.log(repo);  
         res.status(201).send({ repo })
     } catch (e) {
         res.status(400).send()
@@ -19,7 +19,7 @@ router.post('/repo/post', async (req, res) => {
             res.status(400).send({ "msg": "duplicated" })
             return
         }
-        
+
         const repo = new Repo(req.body)
 
         await repo.save()

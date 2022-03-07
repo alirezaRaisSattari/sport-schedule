@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+{{>loginGuard}}
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"
+        type="text/css" />
+    <script src="/js/sportRepo.js"></script>
+</head>
+
+{{>header}}
+
+<body>
+    <div class="main-content" id="step1">
+        <button onclick="create()" style="width:100%">ساخت لیست جدید</button>
+        {{!-- <button onclick="delete()">delete list</button> --}}
+        {{!--
+        <hr> --}}
+        <table id="example" class="display" style="width:100%;">
+            <thead>
+                <tr>
+                    <th>ردیف</th>
+                    <th>تاریخ</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ردیف</th>
+                    <th>تاریخ</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

@@ -74,9 +74,9 @@ router.get('/login', (req, res) => {
     })
 })
 
-router.get('/create', (req, res) => {
-    res.render('create', {
-        title: 'create',
+router.get('/sportRepo', (req, res) => {
+    res.render('sportRepo', {
+        title: 'مخزن',
         name,
         icon
     })
