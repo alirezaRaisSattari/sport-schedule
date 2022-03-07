@@ -3,8 +3,6 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Task = require('./task')
-const fa = require('../translation/fa')
-const en = require('../translation/en')
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -20,7 +18,7 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         validate(value) {
             if (!validator.isEmail(value)) {
-                throw new Error(fa.hello)
+                throw new Error('Email is invalidsssssssssssss')
             }
         }
     },
