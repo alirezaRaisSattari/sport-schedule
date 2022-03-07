@@ -12,6 +12,20 @@ router.get('/repo/get', async (req, res) => {
     }
 })
 
+// router.get('/repo/search', async (req, res) => {
+//     try {
+//         // res.status(400)
+//         let repo = await Repo.find({})
+//         repo = [...repo]
+//         console.log(req.body.name, repo);
+//         repo = repo.filter(s => s.includes('شنا'))
+//         console.log(11111);
+//         res.status(201).send([...repo])
+//     } catch (e) {
+//         res.status(400).send(e)
+//     }
+// })
+
 router.post('/repo/post', async (req, res) => {
     try {
         const exist = await Repo.findOne({ name: req.body.name })

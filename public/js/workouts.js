@@ -47,7 +47,6 @@ const doPrint2 = () => {
         }
     }
     a()
-    //////////////////////////////////////
 
 }
 const deleteItem = (workoutId) => {
@@ -73,14 +72,14 @@ const editItem = (id) => {
 
 }
 
-
 const create = () => {
     if (!isCreate) { return }
     $(document).ready(function () {
         var t = $('#example').DataTable()
-        t.order([0, 'asc']).draw();
+        t.order([0, 'des']).draw();
         t.row.add([
-            '<input type="text" style="width:100%;" class="create-input" placeholder="ورزش مورد نظر را وارد کنید" id="sportName">',
+            '<input type="text" style="width:100%;" onclick="myFunction()" onchange="search()" class="dropbtn" placeholder="ورزش مورد نظر را وارد کنید" id="sportName">' +
+            '<div id="dropdown" class="dropdown-content"></div>',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="ست" id="set">',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="وزن" id="weight">',
             '<input type="text" style="width: 44px;" class="create-input" placeholder="تعداد" id="number">',
@@ -117,6 +116,29 @@ const create = () => {
                 }
             }
             a()
+        });
+        sportName.addEventListener('input', (e) => {
+            let searchAPI = async function postData() {
+                try {
+                    const res = await fetch(`/repo/get`, {
+                        method: 'GET',
+                        headers: {
+                            // 'Authorization': token,
+                            'Content-Type': 'application/json'
+                        },
+                    })
+                    const response = await res.json()
+                    document.getElementById('dropdown').innerHTML = ""
+                    for (let i = 0; i < response.length; i++) {
+                        if (response[i].name.includes(e.target.value)) {
+                            document.getElementById('dropdown').innerHTML += `<a>${response[i].name}</a>`
+                        }
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            searchAPI()
         });
     }, 50);
     isCreate = false
@@ -171,3 +193,47 @@ $(document).ready(function () {
     }
     a()
 });
+
+
+////////////////
+
+function myFunction() {
+    let e = document.getElementById("sportName")
+    let searchAPI = async function postData() {
+        try {
+            const res = await fetch(`/repo/get`, {
+                method: 'GET',
+                headers: {
+                    // 'Authorization': token,
+                    'Content-Type': 'application/json'
+                },
+            })
+            const response = await res.json()
+            document.getElementById('dropdown').innerHTML = ""
+            for (let i = 0; i < response.length; i++) {
+                if (response[i].name.includes(e.value)) {
+                    document.getElementById('dropdown').innerHTML += `<a>${response[i].name}</a>`
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    searchAPI()
+    document.getElementById("dropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
