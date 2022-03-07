@@ -105,7 +105,7 @@ userSchema.pre('remove', async function (next) {
 const User = mongoose.model('User', userSchema)
 
 //warning
-User.deleteMany({}, function (err) {
-    console.log('collection removed')
-});
+// User.deleteMany({}, function (err) {
+//     console.log('collection removed')
+// });
 module.exports = User

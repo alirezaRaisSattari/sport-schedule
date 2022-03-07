@@ -42,8 +42,8 @@ const Task = mongoose.model('Task', {
 })
 
 //warning
-Task.deleteMany({}, function (err) {
-    console.log('collection removed')
-});
+// Task.deleteMany({}, function (err) {
+//     console.log('collection removed')
+// });
 
 module.exports = Task
